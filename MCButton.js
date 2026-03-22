@@ -1,7 +1,7 @@
 
 import { MCComponent } from "./Component.js";
 
-import { pm } from "../pages/Page.js";
+import { pm } from "./Page.js";
 
 class MCButton extends MCComponent {
     constructor() {

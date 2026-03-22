@@ -189,7 +189,7 @@ class Block {
 };
 
 Block.preloaded = Promise.all([
-asyncLoadResByUrl("texture/terrain-atlas.png").then(img => {
+asyncLoadResByUrl("./terrain-atlas.png").then(img => {
     defaultBlockTextureImg = img;
     if (isSupportWebGL2)
         prepareTextureAarray(img);

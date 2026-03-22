@@ -178,7 +178,7 @@ function setBorderOrBgStyle(name, img, {
 const genDrawAndSet = (img, canvas, coordZoomFactor) => (sx, sy, sw, sh, name, styleOption, drawOption) =>
     setBorderOrBgStyle(name, canvas.cropAndZoom(img, sx, sy, sw, sh, coordZoomFactor, drawOption).toImage(), styleOption);
 
-asyncLoadResByUrl("texture/gui.png")
+asyncLoadResByUrl("./gui.png")
 .then(img => {
     const coordZoomFactor = img.width / 256;
     const canvas = new Canvas2D();
@@ -216,7 +216,7 @@ asyncLoadResByUrl("texture/gui.png")
         setBorderOrBgStyle(`move-btn-${name}-active`, canvas.darken().toImage());
     }
 });
-asyncLoadResByUrl("texture/spritesheet.png")
+asyncLoadResByUrl("./spritesheet.png")
 .then(img => {
     const coordZoomFactor = img.width / 256;
     const canvas = new Canvas2D();
@@ -229,7 +229,7 @@ asyncLoadResByUrl("texture/spritesheet.png")
     drawAndSet(8, 32, 8, 8, "hotbar-inventory-btn-bg", {slice: [1]});
     drawAndSet(0, 32, 8, 8, "hotbar-inventory-btn-bg-active", {slice: [1]});
 });
-asyncLoadResByUrl("texture/background.png")
+asyncLoadResByUrl("./background.png")
 .then(img => {
     const coordZoomFactor = img.width / 16;
     const canvas = new Canvas2D();
@@ -237,7 +237,7 @@ asyncLoadResByUrl("texture/background.png")
     setBorderOrBgStyle("background", canvas.toImage());
     setBorderOrBgStyle("background-darken", canvas.darken().toImage());
 });
-asyncLoadResByUrl("texture/panorama.png")
+asyncLoadResByUrl("./panorama.png")
 .then(img => {
     const {width, height} = img;
     const canvas = new Canvas2D(height, height);
@@ -250,9 +250,9 @@ asyncLoadResByUrl("texture/panorama.png")
     }
     for (let face of "px,nx,py,ny,pz,nz".split(","))
         ans.push(ans[face]);
-    setResource("welcomePage/textures", ans);
+    setResource("./", ans);
 });
-asyncLoadResByUrl("texture/title.png");
+asyncLoadResByUrl("./title.png");
 
 import { Render } from "./Render.js";
 import { Camera } from "./Camera.js";

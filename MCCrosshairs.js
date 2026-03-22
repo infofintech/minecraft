@@ -6,7 +6,7 @@ class MCCrosshairs extends MCComponent {
         return MCComponent.genTemplate(`
             <style>
                 :host {
-                    background-image: url(texture/icons.png);
+                    background-image: url(./icons.png);
                     background-size: 100% 100%;
                     background-repeat: no-repeat;
                     pointer-events: none;

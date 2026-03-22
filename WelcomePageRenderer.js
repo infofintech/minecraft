@@ -6,7 +6,7 @@ import * as glsl from "./glsl.js";
 import { waitResource } from "./loadResources.js";
 
 let texImgs = null;
-waitResource("welcomePage/textures").then(imgs => texImgs = imgs);
+waitResource("./").then(imgs => texImgs = imgs);
 
 class WelcomeRenderer extends Render {
     constructor(canvas) {
@@ -35,7 +35,7 @@ class WelcomeRenderer extends Render {
             ele: this.createIbo(element),
         };
         this.prg = this.createProgram("welcomePage", glsl.welcomePage.vert, glsl.welcomePage.frag)
-                    .use().bindTex("uTexture", this.createCubemapsTexture(texImgs, "welcomePage/textures"))
+                    .use().bindTex("uTexture", this.createCubemapsTexture(texImgs, "./"))
                     .setAtt("aPosition", this.bos.ver);
         const {ctx} = this;
         ctx.texParameteri(ctx.TEXTURE_CUBE_MAP, ctx.TEXTURE_MAG_FILTER, ctx.LINEAR);

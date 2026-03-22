@@ -246,7 +246,7 @@ asyncLoadResByUrl("./panorama.png")
         let face = "pz,px,nz,nx,py,ny".split(",")[i];
         canvas.cropAndZoom(img, i * height, 0, height, height);
         ans[face] = canvas.toImage();
-        setResource("welcomePage/texture_" + face, ans[face]);
+        setResource("./texture_" + face, ans[face]);
     }
     for (let face of "px,nx,py,ny,pz,nz".split(","))
         ans.push(ans[face]);
